@@ -1,6 +1,6 @@
-diff -Nru gb-0.0.17/configure.in gb-0.0.17.new/configure.in
---- gb-0.0.17/configure.in	Fri Jan 19 19:26:02 2001
-+++ gb-0.0.17.new/configure.in	Fri Jan 19 19:26:17 2001
+diff -Nru gb-0.0.18/configure.in gb-0.0.18.new/configure.in
+--- gb-0.0.18/configure.in	Tue Mar 13 12:35:09 2001
++++ gb-0.0.18.new/configure.in	Thu Mar 15 01:49:33 2001
 @@ -21,8 +21,6 @@
  VERSION=$GB_VERSION
  PACKAGE=gb
@@ -10,12 +10,12 @@ diff -Nru gb-0.0.17/configure.in gb-0.0.17.new/configure.in
  AM_CONFIG_HEADER(config.h)
  
  dnl Initialize automake stuff
-@@ -32,7 +30,7 @@
+@@ -33,7 +31,7 @@
  AM_MAINTAINER_MODE
  
- ALL_LINGUAS="no"
+ ALL_LINGUAS="az da el fr no ru sk sv tr uk"
 -AM_GNOME_GETTEXT
 +AM_GNU_GETTEXT
  
  dnl Checks for programs.
- AC_PROG_CC
+ AC_PROG_INSTALL
