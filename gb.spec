@@ -2,7 +2,7 @@ Summary:	GB - GNOME Basic
 Summary(pl):	GB - GNOME Basic
 Name:		gb
 Version:	0.0.20
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
 Patch0:		%{name}-am_fixes.patch
 Patch1:		%{name}-am15.patch
 Patch2:		%{name}-%{name}run.patch
+Patch3:		%{name}-locale_names.patch
 URL:		http://www.gnome.org/gb/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,7 +19,6 @@ BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 This is an embryonic attempt to provide VB compatible functionality
@@ -58,6 +58,9 @@ Biblioteki statyczne do GNOME Basic.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 rm -f missing
