@@ -39,7 +39,7 @@ Requires:	%{name} = %{version}
 Development resources for GNOME Basic.
 
 %description devel -l pl
-Zasoby potrzebne przy tworzeniu alikacji u¿ywaj±cych gb.
+Zasoby potrzebne przy tworzeniu aplikacji u¿ywaj±cych gb.
 
 %package static
 Summary:	Static libraries for GNOME Basic
