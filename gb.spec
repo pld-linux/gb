@@ -2,7 +2,7 @@ Summary:	GB - Gnome Basic
 Summary:	GB - Gnome Basic
 Name:		gb
 Version:	0.0.18
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -14,6 +14,7 @@ URL:		http://www.gnome.org/gb/
 BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gnome-libs-devel
+BuildRequires:	gnome-print-devel >= 0.28
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
