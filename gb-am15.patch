@@ -1,0 +1,83 @@
+--- gb-0.0.20/gb/Makefile.am~	Mon Sep 10 04:21:45 2001
++++ gb-0.0.20/gb/Makefile.am	Mon Sep 10 04:24:43 2001
+@@ -6,8 +6,8 @@
+ #	Michael Meeks <michael@imaginator.com>
+ # 
+ 
+-LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
++LDADD        = $GLIB_LIBS)
++INCLUDES     = -I$(top_srcdir) $(GLIB_CFLAGS) $(EXTRA_GNOME_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libgb.la
+ 
+@@ -23,7 +23,7 @@
+ EXTRA_DIST = $(BUILT_SOURCES) gb-constants.gba $(GB_GPERF_OUTPUT) \
+ 	$(GB_GPERF_FILES)
+ 
+-CLEANFILES += $(BUILT_SOURCES) $(GB_GPERF_OUTPUT)
++CLEANFILES = $(BUILT_SOURCES) $(GB_GPERF_OUTPUT)
+ 
+ libgb_la_SOURCES =  		\
+ 	grammar.y		\
+@@ -63,7 +63,7 @@
+ 	gb-value.h		\
+ 	libgb.h
+ 
+-libgb_la_LIBADD = -lm @GLIB_LIBS@ $(EXTRA_GNOME_LIBS)
++libgb_la_LIBADD = -lm $(GLIB_LIBS) $(EXTRA_GNOME_LIBS)
+ #
+ #  gperf flags
+ #    -c		Generates C code that uses the strncmp function to perform string
+@@ -95,7 +95,7 @@
+ 	@-rm -f $@
+ 	gperf $(GB_$*_GPERF_FLAGS) -L 'ANSI-C' -l -C -c -N $(addsuffix _lookup, $*) $^ > $@
+ 
+-YFLAGS += -d -v -p gb_
++YFLAGS = -d -v -p gb_
+ 
+ libgbincludedir = $(includedir)/gb
+ libgbinclude_HEADERS =		\
+--- gb-0.0.20/gbrun/objects/gba/Makefile.am~	Wed Jun 27 16:35:42 2001
++++ gb-0.0.20/gbrun/objects/gba/Makefile.am	Mon Sep 10 04:41:24 2001
+@@ -7,8 +7,8 @@
+ # (C) HelixCode Inc, 2000
+ # 
+ 
+-LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ 
++LDADD        = $(GLIB_LIBS)
++INCLUDES     = -I$(top_srcdir) $(GLIB_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libgba.la
+ 
+@@ -31,8 +31,4 @@
+         gba-func.h 
+ # gba-func.[ch] should be removed when all restruct. is done.
+ 
+-
+-CFLAGS += -g -Wall $(EXTRA_GNOME_CFLAGS)
+-
+-
+-
++libgba_la_CFLAGS = $(EXTRA_GNOME_CFLAGS)
+--- gb-0.0.20/Makefile.am~	Mon Sep 10 04:55:37 2001
++++ gb-0.0.20/Makefile.am	Mon Sep 10 04:55:25 2001
+@@ -9,14 +9,14 @@
+ SUBDIRS = gb gbrun test docs po intl
+ 
+ EXTRA_DIST = \
+-	README README.CVS FAQ TODO
++	README README.CVS FAQ TODO \
++	gbConf.sh.in gb.spec
+ 
+ 
+ confexecdir = $(libdir)
+ confexec_DATA = gbConf.sh
+ 
+-EXTRA_DIST = gbConf.sh.in gb.spec
+-CLEANFILES += gbConf.sh
++CLEANFILES = gbConf.sh
+ gbConf.sh: gbConf.sh.in Makefile
+ 	sed -e 's?\@GB_LIBDIR\@?$(GB_LIBDIR)?g' \
+ 	    -e 's?\@GB_INCLUDEDIR\@?$(GB_INCLUDEDIR)?g' \
