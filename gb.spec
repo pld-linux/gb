@@ -6,6 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
+# Source0-md5:	19e35bd7f24ad619250484a997c0e02d
 Patch0:		%{name}-am_fixes.patch
 Patch1:		%{name}-am15.patch
 Patch2:		%{name}-%{name}run.patch
