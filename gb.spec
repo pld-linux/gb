@@ -1,6 +1,7 @@
 Summary:	GB - Gnome Basic
+Summary:	GB - Gnome Basic
 Name:		gb
-Version:	0.0.16
+Version:	0.0.17
 Release:	1
 License:	GPL
 Group:		X11/Libraries
@@ -20,8 +21,13 @@ This is an embryonic attempt to provide VB compatible functionality
 for the GNOME project, particularly with respect to office (VBA)
 compatibility.
 
+%description -l pl
+Pakierte ten zawiera bibliotekê która udostêpnia funkcje umo¿liwiaj±ce
+realizacjê VB (Visual Basic) dla aplikacji GNOME.
+
 %package devel
 Summary:	Development resources for Gnome Basic
+Summary(pl):	Zasoby potrzebne przy tworzeniu alikacji u¿ywaj±cych Gnome Basic
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -30,8 +36,12 @@ Requires:	%{name} = %{version}
 %description devel
 Development resources for Gnome Basic.
 
+description -l pl devel
+Zasoby potrzebne przy tworzeniu alikacji u¿ywaj±cych gb.
+
 %package static
 Summary:	Static libraries for Gnome Basic
+Summary(pl):	Biblioteki statyczne do Gnome Basic
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
 Group(pl):	X11/Programowanie/Biblioteki
@@ -39,6 +49,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Static libraries for Gnome Basic.
+
+%description -l pl static
+Biblioteki statyczne do Gnome Basic.
 
 %prep
 %setup -q
