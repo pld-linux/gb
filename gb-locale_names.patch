@@ -1,0 +1,11 @@
+--- gb-0.0.20/configure.in~	Mon Jul 26 10:05:05 2004
++++ gb-0.0.20/configure.in	Mon Jul 26 10:05:05 2004
+@@ -32,7 +32,7 @@
+ AM_PROG_LIBTOOL
+ AM_MAINTAINER_MODE
+ 
+-ALL_LINGUAS="az ca da de el fr no ru sk sv tr uk"
++ALL_LINGUAS="az ca da de el fr nb ru sk sv tr uk"
+ AM_GNOME_GETTEXT
+ 
+ dnl Checks for programs.
