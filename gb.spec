@@ -18,8 +18,6 @@ BuildRequires:	gnome-print-devel >= 0.28
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 This is an embryonic attempt to provide VB compatible functionality
