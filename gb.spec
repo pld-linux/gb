@@ -1,20 +1,20 @@
 Summary:	GB - Gnome Basic
 Summary:	GB - Gnome Basic
 Name:		gb
-Version:	0.0.18
-Release:	2
+Version:	0.0.20
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gb/%{name}-%{version}.tar.gz
 Patch0:		%{name}-am_fixes.patch
-Patch1:		%{name}-ac_fix.patch
 URL:		http://www.gnome.org/gb/
 BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gnome-print-devel >= 0.28
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -60,10 +60,12 @@ Biblioteki statyczne do Gnome Basic.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
-aclocal
+sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
+mv -f configure.in.tmp configure.in
+libtoolize --copy --force
+aclocal -I %{_aclocaldir}/gnome
 autoconf
 automake -a -c
 %configure
@@ -77,11 +79,14 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf ChangeLog NEWS README TODO docs/*.txt
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gb
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
