@@ -2,13 +2,15 @@ Summary:	GB - Gnome Basic
 Summary:	GB - Gnome Basic
 Name:		gb
 Version:	0.0.17
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gb/%{name}-%{version}.tar.gz
+Patch0:		%{name}-am_fixes.patch
 URL:		http://www.gnome.org/gb/
+BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,8 +57,10 @@ Biblioteki statyczne do Gnome Basic.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
+automake
 %configure
 %{__make}
 
