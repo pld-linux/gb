@@ -1,8 +1,8 @@
 Summary:	GB - Gnome Basic
 Summary:	GB - Gnome Basic
 Name:		gb
-Version:	0.0.17
-Release:	4
+Version:	0.0.18
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
