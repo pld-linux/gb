@@ -1,0 +1,11 @@
+--- gb-0.0.20/configure.in~	Mon Sep 10 04:56:29 2001
++++ gb-0.0.20/configure.in	Mon Sep 10 05:20:02 2001
+@@ -141,7 +141,7 @@
+ GB_LIBDIR='-L${libdir}'
+ GB_INCLUDEDIR='-I${includedir}'
+ GB_INCLUDEDIR="$GB_INCLUDEDIR `glib-config --cflags glib`"
+-GB_LIBS="-lgb `glib-config --libs glib`"
++GB_LIBS="-lgbrun `glib-config --libs glib`"
+ 
+ AC_SUBST(GB_LIBDIR)
+ AC_SUBST(GB_INCLUDEDIR)
