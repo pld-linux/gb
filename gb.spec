@@ -1,5 +1,5 @@
-Summary:	GB - Gnome Basic
-Summary(pl):	GB - Gnome Basic
+Summary:	GB - GNOME Basic
+Summary(pl):	GB - GNOME Basic
 Name:		gb
 Version:	0.0.20
 Release:	3
@@ -30,28 +30,28 @@ Pakiet ten zawiera bibliotekê która udostêpnia funkcje umo¿liwiaj±ce
 realizacjê VB (Visual Basic) dla aplikacji GNOME.
 
 %package devel
-Summary:	Development resources for Gnome Basic
-Summary(pl):	Zasoby potrzebne przy tworzeniu aplikacji u¿ywaj±cych Gnome Basic
+Summary:	Development resources for GNOME Basic
+Summary(pl):	Zasoby potrzebne przy tworzeniu aplikacji u¿ywaj±cych GNOME Basic
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-Development resources for Gnome Basic.
+Development resources for GNOME Basic.
 
 %description devel -l pl
 Zasoby potrzebne przy tworzeniu alikacji u¿ywaj±cych gb.
 
 %package static
-Summary:	Static libraries for Gnome Basic
-Summary(pl):	Biblioteki statyczne do Gnome Basic
+Summary:	Static libraries for GNOME Basic
+Summary(pl):	Biblioteki statyczne do GNOME Basic
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Static libraries for Gnome Basic.
+Static libraries for GNOME Basic.
 
 %description static -l pl
-Biblioteki statyczne do Gnome Basic.
+Biblioteki statyczne do GNOME Basic.
 
 %prep
 %setup -q
