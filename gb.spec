@@ -1,17 +1,23 @@
 Summary:	GB - Gnome Basic
-Summary:	GB - Gnome Basic
+Summary(pl):	GB - Gnome Basic
 Name:		gb
 Version:	0.0.20
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(ru):	X11/‚…¬Ã…œ‘≈À…
+Group(uk):	X11/‚¶¬Ã¶œ‘≈À…
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gb/%{name}-%{version}.tar.gz
 Patch0:		%{name}-am_fixes.patch
 Patch1:		%{name}-am15.patch
-Patch2:		%{name}-gbrun.patch
+Patch2:		%{name}-%{name}run.patch
 URL:		http://www.gnome.org/gb/
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gnome-libs-devel
@@ -28,21 +34,26 @@ for the GNOME project, particularly with respect to office (VBA)
 compatibility.
 
 %description -l pl
-Pakierte ten zawiera bibliotekÍ ktÛra udostÍpnia funkcje umoøliwiaj±ce
+Pakiet ten zawiera bibliotekÍ ktÛra udostÍpnia funkcje umoøliwiaj±ce
 realizacjÍ VB (Visual Basic) dla aplikacji GNOME.
 
 %package devel
 Summary:	Development resources for Gnome Basic
-Summary(pl):	Zasoby potrzebne przy tworzeniu alikacji uøywaj±cych Gnome Basic
+Summary(pl):	Zasoby potrzebne przy tworzeniu aplikacji uøywaj±cych Gnome Basic
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Ú¡⁄“¡¬œ‘À¡/‚…¬Ã…œ‘≈À…
+Group(uk):	X11/Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Requires:	%{name} = %{version}
 
 %description devel
 Development resources for Gnome Basic.
 
-description -l pl devel
+%description devel -l pl
 Zasoby potrzebne przy tworzeniu alikacji uøywaj±cych gb.
 
 %package static
@@ -50,13 +61,18 @@ Summary:	Static libraries for Gnome Basic
 Summary(pl):	Biblioteki statyczne do Gnome Basic
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Ú¡⁄“¡¬œ‘À¡/‚…¬Ã…œ‘≈À…
+Group(uk):	X11/Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Requires:	%{name}-devel = %{version}
 
 %description static
 Static libraries for Gnome Basic.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne do Gnome Basic.
 
 %prep
@@ -87,6 +103,9 @@ gzip -9nf ChangeLog NEWS README TODO docs/*.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
