@@ -1,0 +1,84 @@
+diff -Nru gb-0.0.17/gb/Makefile.am gb-0.0.17.new/gb/Makefile.am
+--- gb-0.0.17/gb/Makefile.am	Fri Dec  1 00:23:44 2000
++++ gb-0.0.17.new/gb/Makefile.am	Fri Dec 29 20:39:50 2000
+@@ -7,7 +7,7 @@
+ # 
+ 
+ LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@
++INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
+ 
+ lib_LTLIBRARIES = libgb.la
+ 
+@@ -79,8 +79,6 @@
+ GB_method_GPERF_FLAGS		:= -k '1,3,5,9,10,$$' -t
+ GB_object_GPERF_FLAGS           := -k '1-4,6,$$' -t
+ GB_properties_GPERF_FLAGS	:= -k '1-5,8-9,12,15,$$' -D -t
+-
+-CFLAGS += -g -DYYDEBUG -Wall $(EXTRA_GNOME_CFLAGS)
+ 
+ gb-constants.h: gb-constants.gba
+ 	sed -e "s/'[02].*//" $(srcdir)/gb-constants.gba | sed -e "s/'1//" | perl -pe 's/^const[ \t]+/\#define GB_C_/;s/GB_C_gb/GB_C_/' > gb-constants.h
+diff -Nru gb-0.0.17/gbrun/Makefile.am gb-0.0.17.new/gbrun/Makefile.am
+--- gb-0.0.17/gbrun/Makefile.am	Thu Nov 23 02:54:24 2000
++++ gb-0.0.17.new/gbrun/Makefile.am	Fri Dec 29 20:40:01 2000
+@@ -5,7 +5,7 @@
+ SUBDIRS = objects
+ 
+ LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ 
++INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
+ 
+ lib_LTLIBRARIES = libgbrun.la
+ 
+@@ -38,8 +38,6 @@
+ libgbrun_la_LIBADD = $(EXTRA_GNOME_LIBS) -lm @GLIB_LIBS@ \
+ 	$(top_builddir)/gbrun/objects/libgbobj.la \
+         $(top_builddir)/gbrun/objects/gba/libgba.la
+-
+-CFLAGS += -g -Wall $(EXTRA_GNOME_CFLAGS)
+ 
+ libgbrunincludedir = $(includedir)/gbrun
+ 
+diff -Nru gb-0.0.17/gbrun/objects/Makefile.am gb-0.0.17.new/gbrun/objects/Makefile.am
+--- gb-0.0.17/gbrun/objects/Makefile.am	Tue Dec 26 19:44:07 2000
++++ gb-0.0.17.new/gbrun/objects/Makefile.am	Fri Dec 29 20:40:09 2000
+@@ -1,7 +1,7 @@
+ SUBDIRS = gba
+ 
+ LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ 
++INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libgbobj.la
+ 
+@@ -28,7 +28,3 @@
+ libgbobjinclude_HEADERS =	\
+ 	libgbobj.h		\
+ 	gbrun-form.h
+-
+-
+-CFLAGS += -g -Wall $(EXTRA_GNOME_CFLAGS)
+-
+diff -Nru gb-0.0.17/gbrun/objects/gba/Makefile.am gb-0.0.17.new/gbrun/objects/gba/Makefile.am
+--- gb-0.0.17/gbrun/objects/gba/Makefile.am	Sun Oct 29 01:33:16 2000
++++ gb-0.0.17.new/gbrun/objects/gba/Makefile.am	Fri Dec 29 20:40:17 2000
+@@ -8,7 +8,7 @@
+ # 
+ 
+ LDADD        = @GLIB_LIBS@
+-INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ 
++INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libgba.la
+ 
+@@ -30,9 +30,3 @@
+ 	gba-func.c		\
+         gba-func.h 
+ # gba-func.[ch] should be removed when all restruct. is done.
+-
+-
+-CFLAGS += -g -Wall $(EXTRA_GNOME_CFLAGS)
+-
+-
+-
