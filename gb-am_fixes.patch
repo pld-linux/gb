@@ -43,23 +43,32 @@ diff -Nru gb-0.0.17/gbrun/Makefile.am gb-0.0.17.new/gbrun/Makefile.am
 diff -Nru gb-0.0.17/gbrun/objects/Makefile.am gb-0.0.17.new/gbrun/objects/Makefile.am
 --- gb-0.0.17/gbrun/objects/Makefile.am	Tue Dec 26 19:44:07 2000
 +++ gb-0.0.17.new/gbrun/objects/Makefile.am	Fri Dec 29 20:40:09 2000
-@@ -1,7 +1,7 @@
- SUBDIRS = gba
+@@ -4,8 +4,8 @@
  
- LDADD        = @GLIB_LIBS@
+ SUBDIRS = objects
+ 
+-LDADD        = @GLIB_LIBS@
 -INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ 
-+INCLUDES     = -I$(top_srcdir) @GLIB_CFLAGS@ $(EXTRA_GNOME_CFLAGS)
++LDADD        = $(GLIB_LIBS)
++INCLUDES     = -I$(top_srcdir) $(GLIB_CFLAGS) $(EXTRA_GNOME_CFLAGS)
  
- noinst_LTLIBRARIES = libgbobj.la
+ lib_LTLIBRARIES = libgbrun.la
  
-@@ -28,7 +28,3 @@
- libgbobjinclude_HEADERS =	\
- 	libgbobj.h		\
- 	gbrun-form.h
--
--
+@@ -35,13 +35,11 @@
+ 	gbrun-value.c		\
+ 	libgbrun.h
+ 
+-libgbrun_la_LIBADD = $(EXTRA_GNOME_LIBS) -lm @GLIB_LIBS@ \
++libgbrun_la_LIBADD = $(EXTRA_GNOME_LIBS) -lm $(GLIB_LIBS) \
+ 	$(top_builddir)/gbrun/objects/libgbobj.la \
+         $(top_builddir)/gbrun/objects/gba/libgba.la \
+         $(top_builddir)/gb/libgb.la
+ 
 -CFLAGS += -g -Wall $(EXTRA_GNOME_CFLAGS)
 -
+ libgbrunincludedir = $(includedir)/gbrun
+ 
+ libgbruninclude_HEADERS =	\
 diff -Nru gb-0.0.17/gbrun/objects/gba/Makefile.am gb-0.0.17.new/gbrun/objects/gba/Makefile.am
 --- gb-0.0.17/gbrun/objects/gba/Makefile.am	Sun Oct 29 01:33:16 2000
 +++ gb-0.0.17.new/gbrun/objects/gba/Makefile.am	Fri Dec 29 20:40:17 2000
