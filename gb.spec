@@ -9,7 +9,7 @@ Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gb/%{name}-%{version}.tar.gz
 URL:		http://www.gnome.org/gb/
 BuildRequires:	flex
-BuildRequiresl:	gnome-libs-devel
+BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
