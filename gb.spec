@@ -2,7 +2,7 @@ Summary:	GB - GNOME Basic
 Summary(pl):	GB - GNOME Basic
 Name:		gb
 Version:	0.0.20
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
