@@ -1,0 +1,21 @@
+diff -Nru gb-0.0.17/configure.in gb-0.0.17.new/configure.in
+--- gb-0.0.17/configure.in	Fri Jan 19 19:26:02 2001
++++ gb-0.0.17.new/configure.in	Fri Jan 19 19:26:17 2001
+@@ -21,8 +21,6 @@
+ VERSION=$GB_VERSION
+ PACKAGE=gb
+ 
+-AM_ACLOCAL_INCLUDE(macros)
+-
+ AM_CONFIG_HEADER(config.h)
+ 
+ dnl Initialize automake stuff
+@@ -32,7 +30,7 @@
+ AM_MAINTAINER_MODE
+ 
+ ALL_LINGUAS="no"
+-AM_GNOME_GETTEXT
++AM_GNU_GETTEXT
+ 
+ dnl Checks for programs.
+ AC_PROG_CC
