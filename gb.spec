@@ -34,7 +34,7 @@ realizacjê VB (Visual Basic) dla aplikacji GNOME.
 Summary:	Development resources for GNOME Basic
 Summary(pl):	Zasoby potrzebne przy tworzeniu aplikacji u¿ywaj±cych GNOME Basic
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development resources for GNOME Basic.
@@ -46,7 +46,7 @@ Zasoby potrzebne przy tworzeniu aplikacji u¿ywaj±cych gb.
 Summary:	Static libraries for GNOME Basic
 Summary(pl):	Biblioteki statyczne do GNOME Basic
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for GNOME Basic.
