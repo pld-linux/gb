@@ -1,5 +1,5 @@
 Summary:	GB - GNOME Basic
-Summary(pl.UTF-8):   GB - GNOME Basic
+Summary(pl.UTF-8):	GB - GNOME Basic
 Name:		gb
 Version:	0.0.20
 Release:	5
@@ -32,7 +32,7 @@ realizację VB (Visual Basic) dla aplikacji GNOME.
 
 %package devel
 Summary:	Development resources for GNOME Basic
-Summary(pl.UTF-8):   Zasoby potrzebne przy tworzeniu aplikacji używających GNOME Basic
+Summary(pl.UTF-8):	Zasoby potrzebne przy tworzeniu aplikacji używających GNOME Basic
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -44,7 +44,7 @@ Zasoby potrzebne przy tworzeniu aplikacji używających gb.
 
 %package static
 Summary:	Static libraries for GNOME Basic
-Summary(pl.UTF-8):   Biblioteki statyczne do GNOME Basic
+Summary(pl.UTF-8):	Biblioteki statyczne do GNOME Basic
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
