@@ -3,15 +3,15 @@ Summary(pl.UTF-8):	GB - GNOME Basic
 Name:		gb
 Version:	0.0.20
 Release:	5
-License:	GPL
+License:	LGPL v2 (gbrun), GPL v2 (gb)
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gb/0.0/%{name}-%{version}.tar.gz
 # Source0-md5:	19e35bd7f24ad619250484a997c0e02d
 Patch0:		%{name}-am_fixes.patch
 Patch1:		%{name}-am15.patch
-Patch2:		%{name}-%{name}run.patch
+Patch2:		%{name}-gbrun.patch
 Patch3:		%{name}-locale_names.patch
-URL:		http://www.gnome.org/gb/
+URL:		http://www.gnome.org/projects/gb/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	flex
